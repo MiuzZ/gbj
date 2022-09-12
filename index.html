@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html>
+ <head>
+      <link rel="shortcut icon" href="favicon.ico" />
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/left-nav-style.css">
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>Электронный учебник</title>
+  <style type="text/css">
+  .btn {
+    display: inline-block;
+    border: none;
+    border-radius: 50px;
+    font-size: 22px;
+    padding: 10px 20px;
+    background: #5F9EA0;
+    color: #fff;
+    font-family: Tahoma, sans-serif;
+    cursor: pointer;
+}
+   .spoiler input, .spoiler div  { 
+    display: none; /* Скрываем содержимое */
+   }
+   .spoiler label::before {
+    content: '►'; /* Текст перед заголовком */
+    margin-right: 5px; /* Расстояние до текста */
+   }
+   /* Открытый спойлер */
+   .spoiler :checked + label::before { content: '▼'; }
+   .spoiler :checked ~ div {
+    display: block; /* Показываем спойлер */
+    padding: 10px; /* Поля вокруг текста */
+   }
+   body { 
+   width: 100%;
+min-width:100%;
+margin: 0;
+   background-image: url(img/osnova5.jpg);}
+   #sidebar, #content, #lft { position: absolute; } 
+   #sidebar, #content, #lft { overflow: auto; padding: 50,px; }
+   #header {
+    height: 80px; /* Высота слоя */
+    border-bottom: 2px solid #7B5427;
+   }
+   #header h1 { padding: 20px; margin: 0; color: white;}
+   #sidebar { 
+    width: 199px; background: #F0FFF0; border-right: 0px solid #231F20;
+	box-shadow: 2px 2px 8px rgba(0,0,0,.1);
+    top: 82px; /* Расстояние от верхнего края */ 
+    bottom: 0; /* Расстояние снизу  */
+   }
+   #content {
+       border-right: 0px solid #231F20;
+    top: 82px; /* Расстояние от верхнего края */
+    left: 10px; /* Расстояние от левого края */ 
+    bottom: 0; right: 0;
+       overflow:auto;
+            box-shadow: 2px 2px 8px rgba(0,0,0,0.6);
+          border-radius: 10px; /* Радиус скругления */
+   }
+  
+#content {box-shadow: 2px 2px 8px rgba(0,0,0,0.6);
+  padding: 15px;
+  background: white;
+width: 98.5%;
+min-width:98.5%;
+  box-shadow: 2px 2px 8px rgba(0,0,0,.1);
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+     overflow:auto;
+}
+li {
+    color: #5F9EA0; /* Цвет маркеров */
+   }
+   li span {
+    color: #000000; /* Цвет текста */
+   }
+   p {
+    text-indent: 20px; /* Отступ первой строки в пикселах */
+   }
+         	   #jkdck { width:  100%;
+border-collapse: collapse;	   
+	   border-bottom: none;
+border-left: none;
+border-right: none;
+border-top: none	   }
+#jd{ 
+border-collapse: collapse;	   
+	   border-bottom: none;
+border-left: none;
+border-right: none;
+border-top: none	   }
+#right { text-align: right; }
+	 #left { text-align: left; }
+	 span {
+position: relative;
+bottom: -150px;
+}
+
+
+.circle {
+  position: absolute;
+  bottom: 80px;
+  left: -55px;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: white;
+}
+.form-inner {padding: 50px;}
+.form-inner input,
+.form-inner textarea {
+  display: block;
+  width: 100%;
+  padding: 0 20px;
+  margin-bottom: 10px;
+  background: #E9EFF6;
+  line-height: 40px;
+  border-width: 0;
+  border-radius: 20px;
+  font-family: 'Roboto', sans-serif;
+}
+.form-inner input[type="submit"] {
+  margin-top: 30px;
+  background: #5F9EA0;
+  border-bottom: 4px solid #5F9EA0;
+  color: white;
+  font-size: 14px;
+}
+.form-inner textarea {resize: none;}
+.form-inner h3 {
+  margin-top: 0;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 500;
+  font-size: 24px;
+  color:#5F9EA0;
+}
+        /*дальше стиль прокрутки*/
+      ::-webkit-scrollbar { width: 8px; }
+
+::-webkit-scrollbar-track {
+  background: #f3f0f0;
+  border-radius: 5px;
+  box-shadow: inset 0 0 6px rgba(23, 22, 22, 0.22);
+}
+
+::-webkit-scrollbar-thumb {
+  background: #a0c8d8;
+  background: -moz-linear-gradient(left, #a4c3d0 0%, #28a3ca 50%, #b2d2de 100%);
+  background: -webkit-gradient(linear, left top, right top, color-stop(0%, #accfde), color-stop(50%, #2caad2), color-stop(100%, #bce0ee));
+  background: -webkit-linear-gradient(left, #a3bfcc 0%, #29b8e5 50%, #b1d3e0 100%);
+  background: -o-linear-gradient(left, #9ebecc 0%, #29b8e5 50%, #a0c5d4 100%);
+  background: -ms-linear-gradient(left, #9dc1d0 0%, #29b8e5 50%, #aed2e0 100%);
+  background: linear-gradient(to right, #a6c9d8 0%, #29b8e5 50%, #b2d2de 100%);
+  border-radius: 5px;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#b3dced', endColorstr='#bce0ee', GradientType=1);
+}
+  </style>
+  <link rel="import" href="primer8.html">
+ </head>
+ <body>
+   <div id="header"><h1>Глава 3.
+ПАРАЛЛЕЛЬНОСТЬ ПРЯМЫХ НА ПЛОСКОСТИ</h1></div><div class="openNav">
+      <input type="checkbox" id="nav-toggle" hidden>
+     <nav class="nav">
+   <label for="nav-toggle" class="nav-toggle" onclick></label>
+          <h2 class="logo"> 
+            <a href="//dbmast.ru/">Содержание</a> 
+        </h2>
+     <ul>
+          <li><a href="index.html">От автора</a>
+            <li><a href="primer.html">§ 15. Признаки параллельности прямых.
+              
+                  <li><a href="primer.html"> 15.1. Две прямые, перпендикулярные третьей</a></li>
+            <li><a href="primer2.html">15.2. Накрест лежащие, соответственные
+и односторонние углы</a></li>
+                  <li><a href="primer3.html">15.3. Признаки параллельности прямых</a></li>
+                   <li><a href="zad15.1.html">Задания к § 15</a></li>
+                
+            <li><a href="primer4.html">§ 16. Аксиома параллельных прямых</a>
+                <li><a href="zad16.html">Задания к § 16</a></li>
+            <li><a href="primer5.html">§ 17. Свойства параллельных прямых</a>
+                   <li><a href="zad17.html">Задания к § 17</a></li>
+            <li><a href="primer6.html">§ 18*. Углы с соответственно
+ параллельными или перпендикулярными сторонами.</a> 
+                <li><a href="zad18.html">Задания к § 18</a></li>
+                <li><a href="otv.html">Ответы к заданиям из Главы 3 "Параллельность прямых на плоскости"</a></li>
+        </ul>
+    </nav>
+  <div id="content">
+   <span><h1 align="center"><font size="6"><b>От автора</b></h1>
+   <p align="center"><font size="5">Электронное приложение 
+       <p align="center"><font size="5"> к учебному пособию «Геометрия»
+<p align="center"><font size="5">для 7 класса учреждений общего среднего образования
+
+<p align="center"><font size="5">с русским языком обучения
+
+<p align="center"><font size="5">по Главе 3 
+<p align="center"><font size="10">"Параллельность прямых на плоскости"</font>
+    <p  align="center">Материалы, включая изображения, использовались из следующего учебного пособия:Геометрия: учебное пособие для 7-го класса учреждений общего среднего образования с русским языком обучения / В. В. Казаков. – Минск: Народная асвета, 2017.
+ 
+
+<p align="right">2021 &copy; Берникова А.Л.
+</span>
+</div>
+ </body>
+</html>
