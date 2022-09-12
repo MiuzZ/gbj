@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html>
+ <head>
+    <link rel="shortcut icon" href="favicon.ico" />
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/left-nav-style.css">
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>Электронный учебник</title>
+  <style type="text/css">
+.btv {
+    display: inline-block;
+    border: none;
+    border-radius: 50px;
+    font-size: 22px;
+    padding: 10px 20px;
+    background: #5F9EA0;
+    color: #fff;
+    font-family: Tahoma, sans-serif;
+    cursor: pointer;
+}
+   .spoiler input, .spoiler div  { 
+    display: none; /* Скрываем содержимое */
+   }
+   .spoiler label::before {
+    content: '►'; /* Текст перед заголовком */
+    margin-right: 5px; /* Расстояние до текста */
+   }
+   /* Открытый спойлер */
+   .spoiler :checked + label::before { content: '▼'; }
+   .spoiler :checked ~ div {
+    display: block; /* Показываем спойлер */
+    padding: 10px; /* Поля вокруг текста */
+   }
+      body { 
+   
+min-width:100%;
+margin: 0;
+   background-color: white;}
+       #sidebar, #content, #lft, #content2 { position: absolute; } 
+   #sidebar, #content, , #content2, #lft { overflow: auto; padding: 50,px; }
+       #header { background-image: url(img/osnova5.jpg);
+    height: 80px; /* Высота слоя, верхний фон*/
+            bottom: 82px;
+   }
+      #header h1 { padding: 20px; margin: 0; color: white;}
+  
+      #content {border-right: 0px solid #231F20;
+          width: calc(100%/1.37);
+    top: 82px; /* Расстояние от верхнего края */
+    left: 10px; /* Расстояние от левого края */ 
+    bottom: 0; right: calc(100%/1.37); overflow:auto;
+            box-shadow: 2px 2px 8px rgba(0,0,0,0.6);
+          border-radius: 10px; /* Радиус скругления */
+   }
+ #content2 {
+       
+    top: 82px; /* Расстояние от верхнего края */
+   left: calc(100%/1.34); /* Расстояние от левого края */ 
+    bottom: 0; right: 0;
+     background: #E0FFFF;
+     bottom: 0; overflow:auto;
+         border-radius: 10px; /* Радиус скругления */
+   }
+         #content {
+          box-shadow: 2px 2px 8px rgba(0,0,0,0.6);
+  padding: 15px;
+  background: white;
+width: calc(100%/1.37);
+min-width:calc(100%/1.37);
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+          overflow:auto;
+}
+        #content2 {
+  padding: 15px;
+  background: white;
+background: #E0FFFF;
+min-width:100px;
+  box-shadow: 2px 2px 8px rgba(0,0,0,.1);
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; bottom: 0;
+            overflow:auto;
+}
+li {
+    color: #5F9EA0; /* Цвет маркеров */
+   }
+   li span {
+    color: #000000; /* Цвет текста */
+   }
+   p {
+    text-indent: 20px; /* Отступ первой строки в пикселах */
+   }
+         	   #jkdck { width:  100%;
+border-collapse: collapse;	   
+	   border-bottom: none;
+border-left: none;
+border-right: none;
+border-top: none	   }
+#jd{ 
+border-collapse: collapse;	   
+	   border-bottom: none;
+border-left: none;
+border-right: none;
+border-top: none	   }
+#right { text-align: right; }
+	 #left { text-align: left; }
+      /*дальше стиль прокрутки*/
+      ::-webkit-scrollbar { width: 8px; }
+
+::-webkit-scrollbar-track {
+  background: #f3f0f0;
+  border-radius: 5px;
+  box-shadow: inset 0 0 6px rgba(23, 22, 22, 0.22);
+}
+
+::-webkit-scrollbar-thumb {
+  background: #a0c8d8;
+  background: -moz-linear-gradient(left, #a4c3d0 0%, #28a3ca 50%, #b2d2de 100%);
+  background: -webkit-gradient(linear, left top, right top, color-stop(0%, #accfde), color-stop(50%, #2caad2), color-stop(100%, #bce0ee));
+  background: -webkit-linear-gradient(left, #a3bfcc 0%, #29b8e5 50%, #b1d3e0 100%);
+  background: -o-linear-gradient(left, #9ebecc 0%, #29b8e5 50%, #a0c5d4 100%);
+  background: -ms-linear-gradient(left, #9dc1d0 0%, #29b8e5 50%, #aed2e0 100%);
+  background: linear-gradient(to right, #a6c9d8 0%, #29b8e5 50%, #b2d2de 100%);
+  border-radius: 5px;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#b3dced', endColorstr='#bce0ee', GradientType=1);
+}
+       TD.leftcol {
+    width: 110px; /* Ширина левой колонки с рисунком */
+    vertical-align: top; /* Выравнивание по верхнему краю */
+   }
+      .space { 
+    padding: 20px; /* Поля */
+    background: #FFF0F5; /* Цвет фона */
+    border: 2px solid #FFF0F5; /* Параметры рамки */
+           box-shadow: 2px 2px 8px rgba(0,0,0,0.6);
+               border-right: 0px solid #231F20;
+          left: 10px;}
+      .space2 { 
+    padding: 20px; /* Поля */
+    background: #BBFFFF; /* Цвет фона */
+    border: 2px solid #BBFFFF; /* Параметры рамки */
+           box-shadow: 2px 2px 8px rgba(0,0,0,0.6);
+               border-right: 0px solid #231F20;
+          left: 10px;}  
+      .space3 { 
+    padding: 20px; /* Поля */
+    background: #ffc0cb; /* Цвет фона */
+    border: 2px solid #ffc0cb; /* Параметры рамки */
+           box-shadow: 2px 2px 8px rgba(0,0,0,0.6);
+               border-right: 0px solid #231F20;
+          left: 10px;} 
+ </style>
+ </head>
+ <body>
+     <div id="header"><h1>Глава 3.
+ПАРАЛЛЕЛЬНОСТЬ ПРЯМЫХ НА ПЛОСКОСТИ</h1></div><div class="openNav">
+      <input type="checkbox" id="nav-toggle" hidden>
+     <nav class="nav">
+   <label for="nav-toggle" class="nav-toggle" onclick></label>
+          <h2 class="logo"> 
+            <a href="//dbmast.ru/">Содержание</a> 
+        </h2>
+        <ul>
+            <li><a href="index.html">От автора</a>
+            <li><a>§ 15. Признаки параллельности прямых.
+        
+                  <li><a href="primer.html"> 15.1. Две прямые, перпендикулярные третьей</a></li>
+            <li><a href="primer2.html">15.2. Накрест лежащие, соответственные
+и односторонние углы</a></li>
+                  <li><a href="primer3.html">15.3. Признаки параллельности прямых</a></li>
+                   <li><a href="zad15.1.html">Задания к § 15</a></li>
+            
+            <li><a href="primer4.html">§ 16. Аксиома параллельных прямых</a>
+                <li><a href="zad16.html">Задания к § 16</a></li>
+            <li><a href="primer5.html">§ 17. Свойства параллельных прямых</a>
+            <li><a href="primer6.html">§ 18*. Углы с соответственно
+ параллельными или перпендикулярными сторонами.</a> 
+                <li><a href="zad18.html">Задания к § 18</a></li>
+               <li><a href="otv.html">Ответы к заданиям из Главы 3 "Параллельность прямых на плоскости"</a></li>
+        </ul>
+    </nav>
+  <div id="content">
+      <h2><b><font color="#8B6914">§&nbsp;16.&nbsp;Аксиома параллельных прямых</font></b></h2>
+   
+      <p>Вы&nbsp;уже знаете, что&nbsp;на плоскости через точку, не&nbsp;лежащую&nbsp;на данной прямой, можно провести прямую, параллельную данной&nbsp;(см.&nbsp;§&nbsp;15). Из&nbsp;<u><i>пятого постулата <b>Евклида</b></i></u> (<b><font color="#53868B"><i>постулат</i></font></b>&nbsp;— аксиоматическое предположение) следует, что&nbsp;такая
+прямая&nbsp;— единственная.
+          <table width="100%" cellspacing="0" cellpadding="0">
+   <tr> 
+    <td class="leftcol">
+ <img src="img/21.png" width="200" height="250"></td>
+      <td valign="top">
+<p>На&nbsp;протяжении двух тысячелетий вокруг утверждения о единственности параллельной прямой разыгрывалась захватывающая и драматичная история! Со времен
+Древней Греции математики спорили о том,
+можно доказать пятый постулат Евклида
+или нет. То есть это теорема или аксиома?
+В конце концов работы русского математика
+    <b>Н.&nbsp;И.&nbsp;Лобачевского&nbsp;(1792—1856)</b> позволили выяснить, что доказать пятый постулат
+нельзя. Поэтому это утверждение является
+    <font color="#53868B"> <i>аксиомой</i></font>. </p>
+          <p><div class="space3"><b><font color="#53868B"><i>Аксиома параллельных прямых.</i></font></b><p><b>Через точку, не&nbsp;лежащую на
+данной прямой, можно провести только одну прямую, параллельную данной.</b></div></td></tr></table>
+    <table width="100%" cellspacing="0" cellpadding="0">
+   <tr> 
+    <td class="leftcol">
+ <img src="img/22.png" width="180" height="130"></td>
+      <td valign="top">
+      <p>Если прямая <b>b</b> проходит через точку <b>M</b> и
+          параллельна прямой <b>&nbsp;a&nbsp;(рис.&nbsp;186)</b>, то любая другая прямая, проходящая через точку <b>M</b>, будет
+          пересекаться с прямой <b>a</b> в некоторой точке,
+          пусть и достаточно удаленной.</p></td></tr></table>
+
+<p>Поиски доказательства пятого постулата Евклида привели к развитию математики и физики, к пересмотру научных
+представлений о геометрии Вселенной. Решая проблему пятого постулата, Лобачевский создал новую геометрию, с новыми
+    аксиомами, теоремами, отличающуюся от <i>геометрии Евклида</i>,
+    которая теперь так и называется<i>— геометрия Лобачевского</i>. 
+<p>Вы уже знаете, что&nbsp;на плоскости две прямые, перпендикулярные третьей, параллельны между собой. А&nbsp;если две прямые параллельны третьей прямой, то&nbsp;что можно сказать про первые
+две прямые? На&nbsp;этот вопрос отвечает следующая теорема. 
+      <p><div class="space2"><b><font color="#53868B"><i>Теорема (о двух прямых, параллельных третьей).</i></font></b><p><b>
+На плоскости две прямые, параллельные третьей, параллельны между собой.</b></div>
+<p><div>
+      <div class="spoiler">
+   <input type="checkbox" id="spoiler119">
+   <label for="spoiler119" span class="btv">Доказательство. Показать/скрыть нажатием.</label>
+          <div>
+               <table width="100%" cellspacing="0" cellpadding="0">
+   <tr> 
+    <td class="leftcol">
+ <img src="img/23.png" width="200" height="150"></td>
+      <td valign="top">
+         <p> <u><i>Дано:</i></u>&nbsp;<b>a&nbsp;&#124;&#124;&nbsp;c</b>, <b>b&nbsp;&#124;&#124;&nbsp;c&nbsp;(рис. 187)</b>.
+            <p>  <u><i>Доказать:</i></u><b>&nbsp;a&nbsp;&#124;&#124;&nbsp;b</b>.
+            <p>  <u><i>Доказательство.</i></u> Предположим, что&nbsp;прямые<b>
+          a</b>&nbsp;и&nbsp;<b>b</b>&nbsp;не&nbsp;параллельны. Тогда&nbsp;они пересекаются в некоторой точке&nbsp;<b>M</b>. Поэтому через точку&nbsp;<b>M</b> будут проходить две прямые&nbsp;<b>a</b>&nbsp;и&nbsp;<b>b</b>, параллельные третьей прямой&nbsp;<b>c</b>. А&nbsp;это противоречит аксиоме параллельных прямых. Значит, наше предположение неверно&nbsp;и&nbsp;<b>a&nbsp;&#124;&#124;&nbsp;b</b>. <p>Теорема
+          доказана.</td></tr></table></div>
+  </div>
+</div> 
+      <h2><b><font color="#8B6914"><p>Метод доказательства «от противного»</font></b></h2>
+      <p>При доказательстве теоремы о двух прямых, параллельных третьей, мы применили метод доказательства <font color="#53868B"><i>от&nbsp;противного</i></font> (то&nbsp;есть «от&nbsp;противоположного»). Суть его в следующем.
+          Утверждение любой теоремы делится на <font color="#53868B"><i>условие</i></font>&nbsp;— то, что
+          в теореме дано, и <font color="#53868B"><i>заключение</i></font>&nbsp;— то, что нужно доказать.
+<p>В&nbsp;доказанной выше теореме условие: <i><b>«Каждая из двух прямых
+    параллельна третьей прямой»</b></i>, а заключение: <i><b>«Эти две прямые параллельны между собой»</b></i>. 
+   <p> Используя метод от противного, предполагают, что из данного условия теоремы следует утверждение, противоположное
+(противное) заключению теоремы. Если&nbsp;при сделанном предположении путем логических рассуждений приходят к какому-либо утверждению, противоречащему аксиомам или ранее
+доказанным теоремам, то сделанное предположение считается
+неверным, а верным&nbsp;— ему противоположное. 
+       <p>В&nbsp;доказательстве нашей теоремы мы предположили, что
+эти две прямые не параллельны, а пересекаются в точке.
+И пришли к выводу, что тогда нарушается аксиома параллельных прямых. Следовательно, наше предположение о пересечении прямых не верно, а верно ему противоположное: прямые
+не пересекаются, то есть параллельны. 
+      <p>Методом от противного ранее была доказана теорема о двух
+прямых, перпендикулярных третьей. 
+      <p>Данный метод является очень мощным логическим инструментом доказательства. Причем не только в геометрии, но и в
+любом аргументированном споре.
+      <p>Используя аксиому параллельных прямых и метод от противного, докажите самостоятельно следующую теорему. 
+      <p><div class="space2"><font color="#53868B"><i><b>Теорема.</b></i></font><p><b>
+Если на плоскости прямая пересекает одну из
+двух параллельных прямых, то она пересекает и другую
+прямую. </b></div>
+<p><iframe width="560" height="315" src="https://www.youtube.com/embed/7zpbngDiFtw" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<hr align="center" width="100%" size="2" color="#ff0000" />
+<br/>
+<table id="jkdck">
+<tr><td id="jd">
+<div id="left">
+     
+    <label span class="btv"><a href="zad15.1.html">Назад</a></label>
+   
+   </div>
+</td>
+<td id="jd"><div id="right">
+    <label span class="btv" ><a href="zad16.html">Вперед</a></label>
+</div></td></tr></table></div>
+       <div id="content2"><b>
+   
+           <p>При помощи <font color="#53868B">Интернета</font> выясните, могли ли встречаться великий писатель <font color="#53868B"><i>Лев&nbsp;Толстой</i></font> и великий математик
+               <font color="#53868B"><i>Николай&nbsp;Лобачевский</i></font>. Если да, то где была наибольшая вероятность их встречи?</b>
+</div></div>
+ </body>
+</html>

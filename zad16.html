@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html>
+ <head>
+    <link rel="shortcut icon" href="favicon.ico" />
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/left-nav-style.css">
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>Электронный учебник</title>
+  <style type="text/css">
+.btv {
+    display: inline-block;
+    border: none;
+    border-radius: 50px;
+    font-size: 22px;
+    padding: 10px 20px;
+    background: #5F9EA0;
+    color: #fff;
+    font-family: Tahoma, sans-serif;
+    cursor: pointer;
+}
+   .spoiler input, .spoiler div  { 
+    display: none; /* Скрываем содержимое */
+   }
+   .spoiler label::before {
+    content: '►'; /* Текст перед заголовком */
+    margin-right: 5px; /* Расстояние до текста */
+   }
+   /* Открытый спойлер */
+   .spoiler :checked + label::before { content: '▼'; }
+   .spoiler :checked ~ div {
+    display: block; /* Показываем спойлер */
+    padding: 10px; /* Поля вокруг текста */
+   }
+      body { 
+   
+min-width:100%;
+margin: 0;
+   background-color: white;}
+       #sidebar, #content, #lft, #content2 { position: absolute; } 
+   #sidebar, #content, , #content2, #lft { overflow: auto; padding: 50,px; }
+       #header { background-image: url(img/osnova5.jpg);
+    height: 80px; /* Высота слоя, верхний фон*/
+            bottom: 82px;
+   }
+      #header h1 { padding: 20px; margin: 0; color: white;}
+  
+      #content {border-right: 0px solid #231F20;
+          width: calc(100%/1.37);
+    top: 82px; /* Расстояние от верхнего края */
+    left: 10px; /* Расстояние от левого края */ 
+    bottom: 0; right: calc(100%/1.37); overflow:auto;
+            box-shadow: 2px 2px 8px rgba(0,0,0,0.6);
+          border-radius: 10px; /* Радиус скругления */
+   }
+ #content2 {
+       
+    top: 82px; /* Расстояние от верхнего края */
+   left: calc(100%/1.34); /* Расстояние от левого края */ 
+    bottom: 0; right: 0;
+     background: #E0FFFF;
+     bottom: 0; overflow:auto;
+         border-radius: 10px; /* Радиус скругления */
+   }
+         #content {
+          box-shadow: 2px 2px 8px rgba(0,0,0,0.6);
+  padding: 15px;
+  background: white;
+width: calc(100%/1.37);
+min-width:calc(100%/1.37);
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+          overflow:auto;
+}
+        #content2 {
+  padding: 15px;
+  background: white;
+background: #E0FFFF;
+min-width:100px;
+  box-shadow: 2px 2px 8px rgba(0,0,0,.1);
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; bottom: 0;
+            overflow:auto;
+}
+li {
+    color: #5F9EA0; /* Цвет маркеров */
+   }
+   li span {
+    color: #000000; /* Цвет текста */
+   }
+   p {
+    text-indent: 20px; /* Отступ первой строки в пикселах */
+   }
+         	   #jkdck { width:  100%;
+border-collapse: collapse;	   
+	   border-bottom: none;
+border-left: none;
+border-right: none;
+border-top: none	   }
+#jd{ 
+border-collapse: collapse;	   
+	   border-bottom: none;
+border-left: none;
+border-right: none;
+border-top: none	   }
+#right { text-align: right; }
+	 #left { text-align: left; }
+      /*дальше стиль прокрутки*/
+      ::-webkit-scrollbar { width: 8px; }
+
+::-webkit-scrollbar-track {
+  background: #f3f0f0;
+  border-radius: 5px;
+  box-shadow: inset 0 0 6px rgba(23, 22, 22, 0.22);
+}
+
+::-webkit-scrollbar-thumb {
+  background: #a0c8d8;
+  background: -moz-linear-gradient(left, #a4c3d0 0%, #28a3ca 50%, #b2d2de 100%);
+  background: -webkit-gradient(linear, left top, right top, color-stop(0%, #accfde), color-stop(50%, #2caad2), color-stop(100%, #bce0ee));
+  background: -webkit-linear-gradient(left, #a3bfcc 0%, #29b8e5 50%, #b1d3e0 100%);
+  background: -o-linear-gradient(left, #9ebecc 0%, #29b8e5 50%, #a0c5d4 100%);
+  background: -ms-linear-gradient(left, #9dc1d0 0%, #29b8e5 50%, #aed2e0 100%);
+  background: linear-gradient(to right, #a6c9d8 0%, #29b8e5 50%, #b2d2de 100%);
+  border-radius: 5px;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#b3dced', endColorstr='#bce0ee', GradientType=1);
+}
+      /*вращение*/
+</style>
+ </head>
+ <body>
+     <div id="header"><h1>Глава 3.
+ПАРАЛЛЕЛЬНОСТЬ ПРЯМЫХ НА ПЛОСКОСТИ</h1></div><div class="openNav">
+      <input type="checkbox" id="nav-toggle" hidden>
+     <nav class="nav">
+   <label for="nav-toggle" class="nav-toggle" onclick></label>
+          <h2 class="logo"> 
+            <a href="//dbmast.ru/">Содержание</a> 
+        </h2>
+     <ul>
+          <li><a href="index.html">От автора</a>
+            <li><a>§ 15. Признаки параллельности прямых.
+              
+                  <li><a href="primer.html"> 15.1. Две прямые, перпендикулярные третьей</a></li>
+            <li><a href="primer2.html">15.2. Накрест лежащие, соответственные
+и односторонние углы</a></li>
+                  <li><a href="primer3.html">15.3. Признаки параллельности прямых</a></li>
+                   <li><a href="zad15.1.html">Задания к § 15</a></li>
+                
+            <li><a href="primer4.html">§ 16. Аксиома параллельных прямых</a>
+                <li><a href="zad16.html">Задания к § 16</a></li>
+            <li><a href="primer5.html">§ 17. Свойства параллельных прямых</a>
+                   <li><a href="zad17.html">Задания к § 17</a></li>
+            <li><a href="primer6.html">§ 18*. Углы с соответственно
+ параллельными или перпендикулярными сторонами.</a> 
+                <li><a href="zad18.html">Задания к § 18</a></li>
+                <li><a href="otv.html">Ответы к заданиям из Главы 3 "Параллельность прямых на плоскости"</a></li>
+        </ul>
+    </nav>
+  <div id="content">
+      <h2><b><font color="#8B6914">Задания к § 16</font></b></h2>
+    <table width="100%" cellspacing="0" cellpadding="0">
+   <tr> 
+    <td class="leftcol">
+ <img  src="img/26.png" width="150" height="150"></td>
+      <td valign="top">
+          <p> <b><font color="#53868B"> 138.</font></b>&nbsp;На рисунке&nbsp;190<b> ∠&nbsp;1&nbsp;=&nbsp;52°</b>,<b> ∠&nbsp;2&nbsp;=&nbsp;52°</b>, <b>∠&nbsp;3&nbsp;=&nbsp;122°</b>,<b> ∠&nbsp;4&nbsp;=&nbsp;58°</b>. Докажите, что <b>a&nbsp;&#124;&#124;&nbsp;c</b>. </td></tr></table>
+      <p> <b><font color="#53868B"> 139.</font></b>&nbsp;Среди прямых <b>a</b>,<b> b</b>,<b> c</b> и <b>d</b>, лежащих в
+          одной плоскости, определите пары параллельных прямых, если известно, что <b>a&nbsp;⊥&nbsp;b</b>, 
+      <b>c&nbsp;⊥&nbsp;b</b>,<b> a&nbsp;⊥&nbsp;d</b>. 
+      <p>  <img  src="img/44.png" width="600" height="150">
+      <p> <b><font color="#53868B"> 140.</font></b>&nbsp;Выясните, пересекутся ли при продолжении отрезки <b>MK</b>&nbsp;и&nbsp;<b>BC&nbsp;</b>(рис.&nbsp;191).
+    
+      <p>  <b><font color="#53868B">  141.</font></b>&nbsp;На рисунке&nbsp;192<b> ABCD&nbsp;</b>— прямоугольник, <b>MNPK</b>&nbsp;— 
+          квадрат. Докажите, что <b>NP&nbsp;&#124;&#124;&nbsp;AD</b>, <b>AB&nbsp;&#124;&#124;&nbsp;PK</b>. 
+
+      <p> <b><font color="#53868B"> 142.</font></b>&nbsp;Определите все пары параллельных прямых&nbsp;(рис.&nbsp;193).
+      <p>  <b><font color="#53868B"> 143.</font></b>&nbsp;На рисунке&nbsp;194<b> ∠&nbsp;BAC&nbsp;=&nbsp;28°</b>,<b> ∠&nbsp;ACD&nbsp;=&nbsp;28°</b>, <b>∠&nbsp;DFC&nbsp;=&nbsp;35°</b>, 
+          <b>∠&nbsp;EFC&nbsp;=&nbsp;15°</b>, <b>∠&nbsp;FDC&nbsp;=&nbsp;130°</b>. Докажите, что <b>AB&nbsp;&#124;&#124;&nbsp;FE</b>.
+      <p> <b><font color="#53868B"> 144*.</font></b>&nbsp;. Если две параллельные прямые пересечь двумя другими
+перпендикулярными им параллельными прямыми, получим прямоугольник. Сколько всего прямоугольников
+можно насчитать в прямоугольной таблице, у которой
+          <b>2</b>&nbsp;строки и <b>3</b>&nbsp;столбца?
+        
+
+  <hr align="center" width="100%" size="2" color="#ff0000" />
+<br/>
+<table id="jkdck">
+<tr><td id="jd">
+<div id="left">
+     
+    <label span class="btv"><a href="primer4.html">Назад</a></label>
+   
+   </div>
+</td>
+<td id="jd"><div id="right">
+    <label span class="btv" ><a href="primer5.html">Вперед</a></label>
+</div></td></tr></table></div>
+    <div id="content2"><h2><b><font color="#53868B">Решаем вместе. Ключевые задачи</font></b></h2>
+   
+        <p><i><b><font color="#53868B">Задача 1. </font></b>На рисунке&nbsp;188<b> ∠&nbsp;1&nbsp;=&nbsp;∠&nbsp;2</b>,<b> ∠&nbsp;3&nbsp;=&nbsp;∠&nbsp;4</b>. 
+            Доказать, что <b>a&nbsp;&#124;&#124;&nbsp;c</b>. </i>
+   <p><div class="spoiler">
+   <input type="checkbox" id="spoiler120">
+   <label for="spoiler120" span class="btv">Решение. Показать/скрыть нажатием.</label>
+        <div><p><i><u>Доказательство.</u></i> Так как накрест лежащие углы&nbsp;<b>1</b>&nbsp;и&nbsp;<b>2</b> равны, то <b>a&nbsp;&#124;&#124;&nbsp;b</b> по признаку параллельности прямых. Так как соответственные углы&nbsp;<b>3</b>&nbsp;и&nbsp;<b>4</b> равны, то по признаку
+            параллельности прямых <b>c&nbsp;&#124;&#124;&nbsp;b</b>. Так как <b>a&nbsp;&#124;&#124;&nbsp;b</b>
+            и <b>c&nbsp;&#124;&#124;&nbsp;b</b>, то <b>a&nbsp;&#124;&#124;&nbsp;c</b> по теореме о двух прямых, параллельных
+третьей.
+       <p> <img src="img/24.png" width="150" height="150">
+        </div>
+  </div>
+        <p><i><b><font color="#53868B">Задача 2.</font></b> Доказать, что если сумма внутренних односторонних углов при двух данных прямых и секущей меньше&nbsp;<b>180°</b>, 
+            то эти прямые пересекаются.</i>
+            <p><div class="spoiler">
+   <input type="checkbox" id="spoiler121">
+   <label for="spoiler121" span class="btv">Решение. Показать/скрыть нажатием.</label>
+        <div><p><u><i> Доказательство.</i></u> Пусть&nbsp;<b>a</b>&nbsp;и&nbsp;<b>b</b>&nbsp;— данные прямые, <b>AB</b>&nbsp;— их секущая, сумма углов&nbsp;<b>1</b>&nbsp;и&nbsp;<b>2</b> меньше&nbsp;<b>180°&nbsp;</b>(рис.&nbsp;189). Отложим от луча&nbsp;<b>AB</b> угол&nbsp;<b>3</b>, 
+            который в сумме с углом&nbsp;<b>1</b> дает&nbsp;<b>180°</b>. Получим
+            прямую&nbsp;<b>c</b>, которая параллельна прямой&nbsp;<b>a</b> по
+            признаку параллельности прямых. Если предположить, что прямые&nbsp;<b>a</b>&nbsp;и&nbsp;<b>b</b> не пересекаются, а, значит, параллельны, то через точку&nbsp;<b>A</b> будут проходить две прямые&nbsp;<b>b</b>&nbsp;и&nbsp;<b>c</b>, которые параллельны прямой&nbsp;<b>a</b>. Это противоречит аксиоме параллельных прямых. Следовательно, прямые&nbsp;<b>a</b>&nbsp;и&nbsp;<b>b</b> пересекаются.
+        <p><img src="img/25.png" width="150" height="150">
+        </div>
+         
+</div> </div>
+
+ </body>
+</html>

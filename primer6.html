@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html>
+ <head>
+    <link rel="shortcut icon" href="favicon.ico" />
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/left-nav-style.css">
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>Электронный учебник</title>
+  <style type="text/css">
+.btv {
+    display: inline-block;
+    border: none;
+    border-radius: 50px;
+    font-size: 22px;
+    padding: 10px 20px;
+    background: #5F9EA0;
+    color: #fff;
+    font-family: Tahoma, sans-serif;
+    cursor: pointer;
+}
+   .spoiler input, .spoiler div  { 
+    display: none; /* Скрываем содержимое */
+   }
+   .spoiler label::before {
+    content: '►'; /* Текст перед заголовком */
+    margin-right: 5px; /* Расстояние до текста */
+   }
+   /* Открытый спойлер */
+   .spoiler :checked + label::before { content: '▼'; }
+   .spoiler :checked ~ div {
+    display: block; /* Показываем спойлер */
+    padding: 10px; /* Поля вокруг текста */
+   }
+      body { 
+   
+min-width:100%;
+margin: 0;
+   background-color: white;}
+       #sidebar, #content, #lft, #content2 { position: absolute; } 
+   #sidebar, #content, , #content2, #lft { overflow: auto; padding: 50,px; }
+       #header { background-image: url(img/osnova5.jpg);
+    height: 80px; /* Высота слоя, верхний фон*/
+            bottom: 82px;
+   }
+      #header h1 { padding: 20px; margin: 0; color: white;}
+  
+      #content {border-right: 0px solid #231F20;
+          width: calc(100%/1.37);
+    top: 82px; /* Расстояние от верхнего края */
+    left: 10px; /* Расстояние от левого края */ 
+    bottom: 0; right: calc(100%/1.37); overflow:auto;
+            box-shadow: 2px 2px 8px rgba(0,0,0,0.6);
+          border-radius: 10px; /* Радиус скругления */
+   }
+ #content2 {
+       
+    top: 82px; /* Расстояние от верхнего края */
+   left: calc(100%/1.34); /* Расстояние от левого края */ 
+    bottom: 0; right: 0;
+     background: #E0FFFF;
+     bottom: 0; overflow:auto;
+         border-radius: 10px; /* Радиус скругления */
+   }
+         #content {
+          box-shadow: 2px 2px 8px rgba(0,0,0,0.6);
+  padding: 15px;
+  background: white;
+width: calc(100%/1.37);
+min-width:calc(100%/1.37);
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+          overflow:auto;
+}
+        #content2 {
+  padding: 15px;
+  background: white;
+background: #E0FFFF;
+min-width:100px;
+  box-shadow: 2px 2px 8px rgba(0,0,0,.1);
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; bottom: 0;
+            overflow:auto;
+}
+     
+li {
+    color: #5F9EA0; /* Цвет маркеров */
+   }
+   li span {
+    color: #000000; /* Цвет текста */
+   }
+   p {
+    text-indent: 20px; /* Отступ первой строки в пикселах */
+   }
+         	   #jkdck { width:  100%;
+border-collapse: collapse;	   
+	   border-bottom: none;
+border-left: none;
+border-right: none;
+border-top: none	   }
+#jd{ 
+border-collapse: collapse;	   
+	   border-bottom: none;
+border-left: none;
+border-right: none;
+border-top: none	   }
+#right { text-align: right; }
+	 #left { text-align: left; }
+      /*дальше стиль прокрутки*/
+      ::-webkit-scrollbar { width: 8px; }
+
+::-webkit-scrollbar-track {
+  background: #f3f0f0;
+  border-radius: 5px;
+  box-shadow: inset 0 0 6px rgba(23, 22, 22, 0.22);
+}
+
+::-webkit-scrollbar-thumb {
+  background: #a0c8d8;
+  background: -moz-linear-gradient(left, #a4c3d0 0%, #28a3ca 50%, #b2d2de 100%);
+  background: -webkit-gradient(linear, left top, right top, color-stop(0%, #accfde), color-stop(50%, #2caad2), color-stop(100%, #bce0ee));
+  background: -webkit-linear-gradient(left, #a3bfcc 0%, #29b8e5 50%, #b1d3e0 100%);
+  background: -o-linear-gradient(left, #9ebecc 0%, #29b8e5 50%, #a0c5d4 100%);
+  background: -ms-linear-gradient(left, #9dc1d0 0%, #29b8e5 50%, #aed2e0 100%);
+  background: linear-gradient(to right, #a6c9d8 0%, #29b8e5 50%, #b2d2de 100%);
+  border-radius: 5px;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#b3dced', endColorstr='#bce0ee', GradientType=1);
+}
+      
+       TD.leftcol {
+    width: 110px; /* Ширина левой колонки с рисунком */
+    vertical-align: top; /* Выравнивание по верхнему краю */
+   }
+         .space { 
+    padding: 20px; /* Поля */
+    background: #FFF0F5; /* Цвет фона */
+    border: 2px solid #FFF0F5; /* Параметры рамки */
+           box-shadow: 2px 2px 8px rgba(0,0,0,0.6);
+               border-right: 0px solid #231F20;
+          left: 10px;}
+      .space2 { 
+    padding: 20px; /* Поля */
+    background: #BBFFFF; /* Цвет фона */
+    border: 2px solid #BBFFFF; /* Параметры рамки */
+           box-shadow: 2px 2px 8px rgba(0,0,0,0.6);
+               border-right: 0px solid #231F20;
+          left: 10px;} 
+ </style>
+ </head>
+ <body>
+     <div id="header"><h1>Глава 3.
+ПАРАЛЛЕЛЬНОСТЬ ПРЯМЫХ НА ПЛОСКОСТИ</h1></div><div class="openNav">
+      <input type="checkbox" id="nav-toggle" hidden>
+     <nav class="nav">
+   <label for="nav-toggle" class="nav-toggle" onclick></label>
+          <h2 class="logo"> 
+            <a href="//dbmast.ru/">Содержание</a> 
+        </h2>
+        <ul>
+         <li><a href="index.html">От автора</a>
+            <li><a>§ 15. Признаки параллельности прямых.
+              
+                  <li><a href="primer.html"> 15.1. Две прямые, перпендикулярные третьей</a></li>
+            <li><a href="primer2.html">15.2. Накрест лежащие, соответственные
+и односторонние углы</a></li>
+                  <li><a href="primer3.html">15.3. Признаки параллельности прямых</a></li>
+                   <li><a href="zad15.1.html">Задания к § 15</a></li>
+                
+            <li><a href="primer4.html">§ 16. Аксиома параллельных прямых</a>
+                <li><a href="zad16.html">Задания к § 16</a></li>
+            <li><a href="primer5.html">§ 17. Свойства параллельных прямых</a>
+                   <li><a href="zad17.html">Задания к § 17</a></li>
+            <li><a href="primer6.html">§ 18*. Углы с соответственно
+ параллельными или перпендикулярными сторонами.</a> 
+                <li><a href="zad18.html">Задания к § 18</a></li>
+                <li><a href="otv.html">Ответы к заданиям из Главы 3 "Параллельность прямых на плоскости"</a></li>
+        </ul>
+    </nav>
+  <div id="content">
+   <h2><b><font color="#8B6914">§ 18*. Углы с соответственно
+ параллельными и соответственно
+       перпендикулярными сторонами</font></b></h2>
+      <p><div class="space2"><b><font color="#53868B"><i>Теорема (об&nbsp;углах с соответственно параллельными сторонами).</i></font></b>
+      <p><b>Углы с соответственно параллельными сторонами или равны (если&nbsp;оба острые или оба тупые), или&nbsp;в сумме составляют&nbsp;180° (если&nbsp;один острый, а другой тупой).</b></div>
+       <p><div><table width="100%" cellspacing="0" cellpadding="0">
+   <tr> 
+    <td class="leftcol">
+ <img src="img/36.png" width="150" height="150"></td>
+       <td valign="top">
+      <p><b><font color="#53868B">1)</font></b>&nbsp;Острые углы&nbsp;<b>1</b>&nbsp;и&nbsp;<b>2&nbsp;(рис.&nbsp;213,&nbsp;а)</b>&nbsp;— это&nbsp;углы с соответственно параллельными сторонами. Используя рисунок, докажите самостоятельно, что углы&nbsp;<b>1</b>&nbsp;и&nbsp;<b>2</b> равны. 
+      <p><b><font color="#53868B">2)</font></b>&nbsp;Острый угол&nbsp;<b>1</b> и тупой угол&nbsp;<b>2&nbsp;(рис.&nbsp;213,&nbsp;б)</b>&nbsp;— это&nbsp;углы с соответственно параллельными сторонами. Используя этот рисунок и результат
+          пункта&nbsp;<b>1)</b>, докажите, что сумма углов&nbsp;<b>1</b>&nbsp;и&nbsp;<b>2</b> равна&nbsp;<b>180°</b>. </td></tr></table></div>
+<p><div>
+      <p><div class="space2"> <b><font color="#53868B"><i>Теорема (об углах с соответственно перпендикулярными сторонами).</i></font></b>
+      <p><b>Углы&nbsp;с соответственно перпендикулярными сторонами или
+          равны (если&nbsp;оба острые или оба тупые), или&nbsp;в сумме составляют&nbsp;180° (если&nbsp;один острый, а другой тупой).</b></div>
+      <p><div class="spoiler">
+   <input type="checkbox" id="spoiler129">
+   <label for="spoiler129" span class="btv">Доказательство. Показать/скрыть нажатием.</label>
+          <div>
+              <table width="100%" cellspacing="0" cellpadding="0">
+   <tr> 
+    <td class="leftcol">
+ <img src="img/35.png" width="150" height="150"></td>
+       <td valign="top"><p><i><u>Доказательство.</u></i>&nbsp;<b>1)</b>&nbsp;Острые углы&nbsp;<b>1</b>&nbsp;и&nbsp;<b>2</b>&nbsp;— это&nbsp;углы с соответственно перпендикулярными сторонами&nbsp;<b>(рис.&nbsp;214,&nbsp;а)</b>. Построим острый угол&nbsp;<b>3</b> в вершине угла&nbsp;<b>1</b>,
+стороны которого параллельны сторонам
+              угла&nbsp;<b>2</b>. Стороны угла&nbsp;<b>3</b> перпендикулярны
+           сторонам угла&nbsp;<b>1</b> (прямая, перпендикулярная одной из параллельных прямых, перпендикулярна и другой прямой). По&nbsp;предыдущей теореме&nbsp;<b>∠&nbsp;2&nbsp;=&nbsp;∠&nbsp;3</b>. Поскольку угол&nbsp;<b>1</b> и угол&nbsp;<b>3</b> дополняют угол&nbsp;<b>4</b>&nbsp;до&nbsp;<b>90°</b>, то&nbsp;<b>∠&nbsp;1&nbsp;=&nbsp;∠&nbsp;3</b>. Значит,&nbsp;<b>∠&nbsp;1&nbsp;=&nbsp;∠&nbsp;2</b>. </td></tr></table>
+              <p><b>2)</b>&nbsp;Острый угол&nbsp;<b>1</b> и тупой угол&nbsp;<b>2</b>&nbsp;— это&nbsp;углы с соответственно перпендикулярными сторонами&nbsp;<b>(рис.&nbsp;214,&nbsp;б)</b>. Используя
+                  этот рисунок и результат пункта&nbsp;<b>1)</b>, докажите самостоятельно,
+                  что сумма углов&nbsp;<b>1</b>&nbsp;и&nbsp;<b>2</b> равна&nbsp;<b>180°</b>. 
+
+   </div>
+  </div>
+</div>
+     <p> <iframe width="560" height="315" src="https://www.youtube.com/embed/0oE35jMhyno" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<hr align="center" width="100%" size="2" color="#ff0000" />
+<br/>
+<table id="jkdck">
+<tr><td id="jd">
+<div id="left">
+     
+    <label span class="btv"><a href="zad17.html">Назад</a></label>
+   
+   </div>
+</td>
+<td id="jd"><div id="right">
+    <label span class="btv" ><a href="zad18.html">Вперед</a></label>
+</div></td></tr></table></div>
+       <div id="content2"><h2><b><font color="#53868B">Запоминаем</font></b></h2>
+           <p><b><font color="#53868B">1.</font></b>&nbsp;Признаки параллельности прямых: <i>«Если&nbsp;при пересечении двух
+               прямых секущей накрест лежащие углы равны, или соответственные углы равны, или сумма односторонних углов равна&nbsp;<b>180°</b>, то
+               прямые параллельны»</i>. 
+           <p><b><font color="#53868B">2.</font></b>&nbsp;Свойства параллельных прямых: <i>«Если&nbsp;две параллельные прямые
+               пересечены секущей, то накрест лежащие углы равны, соответственные углы равны и сумма односторонних углов равна&nbsp;<b>180°</b>»</i>. 
+           <p><b><font color="#53868B">3.</font></b>&nbsp;На&nbsp;плоскости две прямые, перпендикулярные третьей, параллельны между собой. 
+           <p><b><font color="#53868B">4.</font></b>&nbsp;На&nbsp;плоскости две прямые, параллельные третьей, параллельны
+между собой. 
+           <p><b><font color="#53868B">5.</font></b>&nbsp;Прямая, перпендикулярная одной из двух параллельных прямых, 
+будет перпендикулярна и другой прямой. 
+           <p><b><font color="#53868B">6*.</font></b>&nbsp;Углы&nbsp;с соответственно параллельными сторонами или равны, или
+               в сумме составляют&nbsp;<b>180°</b>. 
+           <p><b><font color="#53868B">7*.</font></b>&nbsp;Углы с соответственно перпендикулярными сторонами или равны, или в сумме составляют&nbsp;<b>180°</b>
+        <p></div>
+</div></div>
+ </body>
+</html>

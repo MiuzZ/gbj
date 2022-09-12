@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html>
+ <head>
+    <link rel="shortcut icon" href="favicon.ico" />
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/left-nav-style.css">
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>Электронный учебник</title>
+  <style type="text/css">
+.btv {
+    display: inline-block;
+    border: none;
+    border-radius: 50px;
+    font-size: 22px;
+    padding: 10px 20px;
+    background: #5F9EA0;
+    color: #fff;
+    font-family: Tahoma, sans-serif;
+    cursor: pointer;
+}
+   .spoiler input, .spoiler div  { 
+    display: none; /* Скрываем содержимое */
+   }
+   .spoiler label::before {
+    content: '►'; /* Текст перед заголовком */
+    margin-right: 5px; /* Расстояние до текста */
+   }
+   /* Открытый спойлер */
+   .spoiler :checked + label::before { content: '▼'; }
+   .spoiler :checked ~ div {
+    display: block; /* Показываем спойлер */
+    padding: 10px; /* Поля вокруг текста */
+   }
+      body { 
+   
+min-width:100%;
+margin: 0;
+   background-color: white;}
+       #sidebar, #content, #lft, #content2 { position: absolute; } 
+   #sidebar, #content, , #content2, #lft { overflow: auto; padding: 50,px; }
+       #header { background-image: url(img/osnova5.jpg);
+    height: 80px; /* Высота слоя, верхний фон*/
+            bottom: 82px;
+   }
+      #header h1 { padding: 20px; margin: 0; color: white;}
+  
+      #content {border-right: 0px solid #231F20;
+          width: calc(100%/1.37);
+    top: 82px; /* Расстояние от верхнего края */
+    left: 10px; /* Расстояние от левого края */ 
+    bottom: 0; right: calc(100%/1.37); overflow:auto;
+            box-shadow: 2px 2px 8px rgba(0,0,0,0.6);
+          border-radius: 10px; /* Радиус скругления */
+   }
+ #content2 {
+       
+    top: 82px; /* Расстояние от верхнего края */
+   left: calc(100%/1.34); /* Расстояние от левого края */ 
+    bottom: 0; right: 0;
+     background: #E0FFFF;
+     bottom: 0; overflow:auto;
+         border-radius: 10px; /* Радиус скругления */
+   }
+         #content {
+          box-shadow: 2px 2px 8px rgba(0,0,0,0.6);
+  padding: 15px;
+  background: white;
+width: calc(100%/1.37);
+min-width:calc(100%/1.37);
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+          overflow:auto;
+}
+        #content2 {
+  padding: 15px;
+  background: white;
+background: #E0FFFF;
+min-width:100px;
+  box-shadow: 2px 2px 8px rgba(0,0,0,.1);
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; bottom: 0;
+            overflow:auto;
+}
+       #content4 {
+  padding: 15px;
+  background: white;
+background: #E0FFFF;
+min-width:100px;
+  box-shadow: 2px 2px 8px rgba(0,0,0,.1);
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; bottom: 0;
+            overflow:auto;
+}
+       #content4 {
+       
+    top: 600px; /* Расстояние от верхнего края */
+   left: 10px; /* Расстояние от левого края */ 
+    bottom: 0; right: 0;
+     background: #E0FFFF;
+     bottom: 0; overflow:auto;
+         border-radius: 10px; /* Радиус скругления */
+   }
+li {
+    color: #5F9EA0; /* Цвет маркеров */
+   }
+   li span {
+    color: #000000; /* Цвет текста */
+   }
+   p {
+    text-indent: 20px; /* Отступ первой строки в пикселах */
+   }
+         	   #jkdck { width:  100%;
+border-collapse: collapse;	   
+	   border-bottom: none;
+border-left: none;
+border-right: none;
+border-top: none	   }
+#jd{ 
+border-collapse: collapse;	   
+	   border-bottom: none;
+border-left: none;
+border-right: none;
+border-top: none	   }
+#right { text-align: right; }
+	 #left { text-align: left; }
+      /*дальше стиль прокрутки*/
+      ::-webkit-scrollbar { width: 8px; }
+
+::-webkit-scrollbar-track {
+  background: #f3f0f0;
+  border-radius: 5px;
+  box-shadow: inset 0 0 6px rgba(23, 22, 22, 0.22);
+}
+
+::-webkit-scrollbar-thumb {
+  background: #a0c8d8;
+  background: -moz-linear-gradient(left, #a4c3d0 0%, #28a3ca 50%, #b2d2de 100%);
+  background: -webkit-gradient(linear, left top, right top, color-stop(0%, #accfde), color-stop(50%, #2caad2), color-stop(100%, #bce0ee));
+  background: -webkit-linear-gradient(left, #a3bfcc 0%, #29b8e5 50%, #b1d3e0 100%);
+  background: -o-linear-gradient(left, #9ebecc 0%, #29b8e5 50%, #a0c5d4 100%);
+  background: -ms-linear-gradient(left, #9dc1d0 0%, #29b8e5 50%, #aed2e0 100%);
+  background: linear-gradient(to right, #a6c9d8 0%, #29b8e5 50%, #b2d2de 100%);
+  border-radius: 5px;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#b3dced', endColorstr='#bce0ee', GradientType=1);
+}
+      nav2 a {
+	position: absolute;
+	
+	display: block;
+	outline: none;
+	text-align: left;
+	z-index: 1000;
+	-webkit-transform: translateY(-50%);
+	transform: translateY(-50%);
+           top: 200px;
+}
+
+nav2 a.prev {
+	left: 0;
+    top: 200px;
+}
+
+nav2 a.next {
+	right: 0;
+    top: 200px;
+}
+
+nav2 a svg {
+	display: block;
+	margin: 0 auto;
+	padding: 0;
+    top: 200px;
+}
+      .color-4 { background-color: #566473; }
+
+.nav2-roundslide a {
+	margin: 0 20px;
+	padding: 15px;
+	width: 62px;
+	height: 62px;
+	border-radius: 40px;
+	background: #34495e;
+	-webkit-transition: width 0.3s, background-color 0.3s;
+	transition: width 0.3s, background-color 0.3s;
+    top: 200px;
+}
+
+.nav2-roundslide .icon-wrap {
+	position: absolute;
+	width: 32px;
+    top: 200px;
+}
+
+.nav2-roundslide a.prev .icon-wrap {
+	left: 15px;
+    top: 200px;
+}
+
+.nav2-roundslide a.next .icon-wrap {
+	right: 15px;
+    top: 200px;
+}
+
+.nav2-roundslide svg.icon {
+	fill: #566473;
+    top: 200px;
+}
+
+.nav2-roundslide h3 {
+	position: absolute;
+	
+	margin: 0;
+	color: #566473;
+	text-transform: uppercase;
+	white-space: nowrap;
+	letter-spacing: 1px;
+	font-weight: 400;
+	font-size: 0.85em;
+	line-height: 4.45;
+	opacity: 0;
+	-webkit-transition: opacity 0.3s, -webkit-transform 0.3s;
+	transition: opacity 0.3s, transform 0.3s;
+    top: 200px;
+}
+
+.nav2-roundslide a.prev h3 {
+	right: 20px;
+	-webkit-transform: translateX(100%);
+	transform: translateX(100%);
+    top: 200px;
+}
+
+.nav2-roundslide a.next h3 {
+	left: 20px;
+	-webkit-transform: translateX(-100%);
+	transform: translateX(-100%);
+    top: 200px;
+}
+
+.nav2-roundslide a:hover {
+	width: 200px;
+	background: #fff;
+    top: 200px;
+}
+
+.nav2-roundslide a:hover h3 {
+	opacity: 1;
+	-webkit-transition-delay: 0.1s;
+	transition-delay: 0.1s;
+	-webkit-transform: translateX(0);
+	transform: translateX(0);
+    top: 200px;
+}
+
+      /*вращение*/
+</style>
+ </head>
+ <body>
+     <div id="header"><h1>Глава 3.
+ПАРАЛЛЕЛЬНОСТЬ ПРЯМЫХ НА ПЛОСКОСТИ</h1></div><div class="openNav">
+      <input type="checkbox" id="nav-toggle" hidden>
+     <nav class="nav">
+   <label for="nav-toggle" class="nav-toggle" onclick></label>
+          <h2 class="logo"> 
+            <a href="//dbmast.ru/">Содержание</a> 
+        </h2>
+     <ul>
+         <li><a href="index.html">От автора</a>
+            <li><a>§ 15. Признаки параллельности прямых.
+              
+                  <li><a href="primer.html"> 15.1. Две прямые, перпендикулярные третьей</a></li>
+            <li><a href="primer2.html">15.2. Накрест лежащие, соответственные
+и односторонние углы</a></li>
+                  <li><a href="primer3.html">15.3. Признаки параллельности прямых</a></li>
+                   <li><a href="zad15.1.html">Задания к § 15</a></li>
+                
+            <li><a href="primer4.html">§ 16. Аксиома параллельных прямых</a>
+                <li><a href="zad16.html">Задания к § 16</a></li>
+            <li><a href="primer5.html">§ 17. Свойства параллельных прямых</a>
+                   <li><a href="zad17.html">Задания к § 17</a></li>
+            <li><a href="primer6.html">§ 18*. Углы с соответственно
+ параллельными или перпендикулярными сторонами.</a> 
+                <li><a href="zad18.html">Задания к § 18</a></li>
+         <li><a href="otv.html">Ответы к заданиям из Главы 3 "Параллельность прямых на плоскости"</a></li>
+        </ul>
+    </nav>
+  <div id="content">
+      <h2><b><font color="#8B6914">Задания к § 17</font></b></h2>
+      <p> <b><font color="#53868B"> 145.</font></b>&nbsp;На рисунке&nbsp;201<b> m&nbsp;&#124;&#124;&nbsp;n</b>. Найдите угол, обозначенный знаком вопроса. 
+              <p><img src="img/45.png" width="600" height="200" >
+      <p> <b><font color="#53868B"> 146.</font></b>&nbsp;На рисунке&nbsp;202<b> a&nbsp;&#124;&#124;&nbsp;b</b>. Найдите сумму <b>∠&nbsp;1&nbsp;+&nbsp;∠&nbsp;2&nbsp;+&nbsp;∠&nbsp;3</b>.
+           <p><img src="img/46.png" width="600" height="200" >
+      <p> <b><font color="#53868B"> 147.</font></b>&nbsp;На рисунке&nbsp;203<b> ∠&nbsp;1&nbsp;+&nbsp;∠&nbsp;2&nbsp;=&nbsp;180°</b>, <b>∠&nbsp;3&nbsp;+&nbsp;∠&nbsp;4&nbsp;=&nbsp;240°</b>. Найдите
+          угол&nbsp;<b>4</b>.
+          <p>  <b><font color="#53868B">  148.</font></b>&nbsp;На рисунке&nbsp;204<b>&nbsp;AB&nbsp;&#124;&#124;&nbsp;CD</b>,<b> CB</b>&nbsp;— биссектриса угла&nbsp;<b>ACD</b>,<b> AC&nbsp;=&nbsp;14&nbsp;см</b>, <b>BC&nbsp;=&nbsp;22&nbsp;см</b>. Найдите периметр треугольника&nbsp;<b>ABC</b>.  
+
+          <p> <b><font color="#53868B"> 149.</font></b>&nbsp;На рисунке&nbsp;205<b>&nbsp;AB&nbsp;&#124;&#124;&nbsp;DC</b>,<b> AD&nbsp;&#124;&#124;&nbsp;BC</b>, <b>AB&nbsp;=&nbsp;6&nbsp;см</b>, периметр
+              четырехугольника&nbsp;<b>ABCD</b> равен&nbsp;<b>20&nbsp;см</b>. Найдите длину отрезка&nbsp;<b>AD</b>.
+
+      <p>  <b><font color="#53868B"> 150.</font></b>&nbsp;Внутренние односторонние углы при двух параллельных
+          прямых&nbsp;и секущей относятся как&nbsp;<b>2&nbsp;<b>:</b>&nbsp;3</b>. Найдите больший
+из этих углов. 
+      <p> <b><font color="#53868B"> 151.</font></b>&nbsp;Один&nbsp;из внутренних односторонних углов при двух параллельных прямых&nbsp;и секущей на&nbsp;<b>40°</b> меньше другого.
+Найдите меньший из этих углов.
+        
+      <p> <b><font color="#53868B"> 152.</font></b>&nbsp;В треугольнике&nbsp;<b>ABC</b> провели биссектрису&nbsp;<B>BK</B>, а&nbsp;из вершины&nbsp;<b>С</b>&nbsp;— прямую, параллельную&nbsp;<b>BK</b>, которая пересекает продолжение стороны&nbsp;<b>AB</b> в точке&nbsp;<b>E</b>. Докажите, что
+          треугольник&nbsp;<b>BEC</b>&nbsp;— равнобедренный. 
+      <p> <b><font color="#53868B"> 153.</font></b>&nbsp;Докажите, что если у четырехугольника&nbsp;<b>ABCD AB&nbsp;=&nbsp;CD</b>,
+          <b>AB&nbsp;&#124;&#124;&nbsp;CD</b>, то <b>BC&nbsp;&#124;&#124;&nbsp;AD</b>.
+      <p> <b><font color="#53868B"> 154.</font></b>&nbsp;Найдите угол, обозначенный знаком вопроса&nbsp;(рис.&nbsp;206). 
+             <p><img src="img/47.png" width="600" height="180" >
+      <p> <b><font color="#53868B"> 155.</font></b>&nbsp;На&nbsp;биссектрисе угла&nbsp;<b>ABC</b> взята точка&nbsp;<b>K</b>, на стороне&nbsp;<b>BC</b> — точка&nbsp;<b>M</b> такая, что&nbsp;<b>KM&nbsp;&#124;&#124;&nbsp;AB</b>, <b>∠&nbsp;BKM&nbsp;=&nbsp;36°</b>. Найдите угол&nbsp;<b>CMK</b>.
+      <p> <b><font color="#53868B"> 156.</font></b>&nbsp;Концы отрезка&nbsp;<b>AB</b> лежат на параллельных прямых&nbsp;<b>a</b>&nbsp;и&nbsp;<b>b</b>. Точка&nbsp;<b>O</b>&nbsp;— середина отрезка&nbsp;<b>AB</b>. Докажите, что любой
+          другой отрезок&nbsp;с концами на прямых&nbsp;<b>a</b>&nbsp;и&nbsp;<b>b</b>, проходящий
+          через точку&nbsp;<b>O</b>, делится ею пополам.
+                        <p> <b><font color="#53868B"> 157.</font></b>&nbsp;Докажите, что прямая, которая пересекает боковую сторону равнобедренного треугольника и параллельна его
+основанию, отсекает от него равнобедренный треугольник.
+                            <table width="100%" cellspacing="0" cellpadding="0">
+   <tr> 
+    <td class="leftcol">
+ <p><img src="img/48.png" width="150" height="130"></td>
+      <td valign="top">
+          <p> <b><font color="#53868B"> 158.</font></b>&nbsp;На рисунке&nbsp;207<b> &#9651;ABC&nbsp;</b>— равносторонний
+              с периметром <b>36&nbsp;см</b>,<b> MK&nbsp;&#124;&#124;&nbsp;BC</b>, <b>NP&nbsp;&#124;&#124;&nbsp;AC</b>,
+              <b>EF&nbsp;&#124;&#124;&nbsp;AB</b> и <b>KM&nbsp;+&nbsp;MN&nbsp;+&nbsp;NP&nbsp;=&nbsp;PE&nbsp;+&nbsp;EF&nbsp;+&nbsp;FK</b>. Найдите периметр шестиугольника&nbsp;<b>KMNPEF</b>. </td></tr></table>
+       <table width="100%" cellspacing="0" cellpadding="0">
+   <tr> 
+    <td class="leftcol">
+ <p><img src="img/49.png" width="150" height="130"></td>
+      <td valign="top">
+          <p> <b><font color="#53868B"> 159*.</font></b>&nbsp;На рисунке&nbsp;208<b> MN&nbsp;&#124;&#124;&nbsp;AC</b>. Докажите, что
+              если&nbsp;<b>O</b>&nbsp;— точка пересечения биссектрис
+              углов&nbsp;<b>A</b>&nbsp;и&nbsp;<b>C</b>, то&nbsp;<b>AM&nbsp;+&nbsp;CN&nbsp;=&nbsp;MN</b>. Найдите
+              длину стороны&nbsp;<b>AC</b>, если периметр треугольника&nbsp;<b>ABC</b> равен&nbsp;<b>34 см</b>, а периметр
+              треугольника&nbsp;<b>MBN&nbsp;</b>—<b>&nbsp;26&nbsp;см</b>.</td></tr></table>
+       <table width="100%" cellspacing="0" cellpadding="0">
+   <tr> 
+    <td class="leftcol">
+ <p><img src="img/50.png" width="150" height="130"></td>
+      <td valign="top">
+          <p> <b><font color="#53868B"> 160*.</font></b>&nbsp;Две прямые пересекаются в точке, лежащей за пределами листа&nbsp;(рис.&nbsp;209). Как
+                                можно измерить угол между этими прямыми, используя чертежный треугольник и транспортир?</td></tr></table>
+                                          
+                    <p> <b><font color="#53868B"> 161*.</font></b>&nbsp;Докажите, что если у четырехугольника противоположные стороны параллельны, то его противоположные углы
+равны между собой. 
+                          
+      <p> <b><font color="#53868B"> 162*.</font></b>&nbsp;Докажите, что если <b>AB&nbsp;&#124;&#124;&nbsp;CD</b>, то: а)<b>&nbsp;∠&nbsp;AEC&nbsp;=&nbsp;∠&nbsp;1&nbsp;+&nbsp;∠&nbsp;2</b>;
+          б)<b>&nbsp;∠&nbsp;1&nbsp;+&nbsp;∠&nbsp;2&nbsp;+&nbsp;∠&nbsp;3&nbsp;=&nbsp;360°&nbsp;</b>(рис.&nbsp;210).
+                            
+ <p><img src="img/51.png" width="450" height="130">
+      
+  <hr align="center" width="100%" size="2" color="#ff0000" />
+<br/>
+<table id="jkdck">
+<tr><td id="jd">
+<div id="left">
+     
+    <label span class="btv"><a href="primer5.html">Назад</a></label>
+   
+   </div>
+</td>
+<td id="jd"><div id="right">
+    <label span class="btv" ><a href="primer6.html">Вперед</a></label>
+</div></td></tr></table></div>
+    <div id="content2"><h2><b><font color="#53868B">Решаем вместе. Ключевые задачи</font></b></h2>
+   
+        <p><i><b><font color="#53868B">Задача 1. </font></b>Доказать, что если отрезки&nbsp;<b>AB</b>&nbsp;и&nbsp;<b>CD</b> равны и параллельны, а отрезки&nbsp;<b>AD</b>&nbsp;и&nbsp;<b>BC</b> пересекаются в точке&nbsp;<b>O</b>, то
+            треугольники&nbsp;<b>AOB</b>&nbsp;и&nbsp;<b>DOC</b> равны.</i>
+   <p><div class="spoiler">
+   <input type="checkbox" id="spoiler123">
+   <label for="spoiler123" span class="btv">Решение. Показать/скрыть нажатием.</label>
+        <div><p><u><i>Доказательство.</i></u> Углы&nbsp;<b>BAD</b>&nbsp;и&nbsp;<b>CDA</b> равны как
+накрест лежащие при параллельных прямых
+            &nbsp;<b>AB</b>&nbsp;и&nbsp;<b>CD</b> и секущей&nbsp;<b>AD&nbsp;</b>(рис.&nbsp;199). Углы&nbsp;<b>ABC</b>
+        &nbsp;и&nbsp;<b>DCB</b> равны как накрест лежащие при параллельных прямых&nbsp;<b>AB</b>&nbsp;и&nbsp;<b>CD</b> и секущей&nbsp;<b>BC</b>. Тогда&nbsp;<b>&#9651;AOB&nbsp;=&nbsp;&#9651;DOC</b> по стороне и двум прилежащим к ней углам. Что и требовалось доказать.
+       <p> <p> <img src="img/27.png" width="200" height="150">
+        </div>
+  </div>
+        <p><i><b><font color="#53868B">Задача 2.</font></b> Доказать, что отрезки параллельных прямых, заключенные между двумя другими пересекающими их параллельными прямыми, равны между собой. </i>
+            <p><div class="spoiler">
+   <input type="checkbox" id="spoiler124">
+   <label for="spoiler124" span class="btv">Решение. Показать/скрыть нажатием.</label>
+        <div> <p><u><i>Доказательство.</i></u> Пусть&nbsp;<b>AB&nbsp;&#124;&#124;&nbsp;CD</b>, <b>BC&nbsp;&#124;&#124;&nbsp;AD&nbsp;</b>(рис.&nbsp;200). Докажем, что&nbsp;<b>AB&nbsp;=&nbsp;CD</b>, <b>BC&nbsp;=&nbsp;AD</b>.
+            Проведем отрезок&nbsp;<b>BD</b>. У треугольников&nbsp;<b>ABD</b>&nbsp;и&nbsp;<b>CDB</b> сторона&nbsp;<b>BD</b>&nbsp;— общая, <b>∠&nbsp;ABD&nbsp;=&nbsp;∠&nbsp;CDB</b> как
+            накрест лежащие при параллельных прямых&nbsp;<b>AB</b>&nbsp;и&nbsp;<b>CD</b> и секущей&nbsp;<b>BD</b>,<b> ∠&nbsp;ADB&nbsp;=&nbsp;∠&nbsp;CBD</b> как
+            накрест лежащие при параллельных прямых&nbsp;<b>BC</b>&nbsp;и&nbsp;<b>AD</b> и секущей&nbsp;<b>BD</b>. Тогда треугольники равны по стороне и двум прилежащим к ней углам. Из равенства треугольников следует, что
+            <b>AB&nbsp;=&nbsp;CD</b>,<b> BC&nbsp;=&nbsp;AD</b>. Что&nbsp;и требовалось доказать.
+       <p> <img src="img/28.png" width="200" height="150">
+        </div>
+         
+</div> </div>
+
+ </body>
+</html>
